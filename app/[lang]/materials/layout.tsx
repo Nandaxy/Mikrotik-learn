@@ -27,7 +27,7 @@ export default async function MaterialsLayout({
   })
 
   return (
-    <div className="container pt-14 lg:pt-0">
+    <div className="pt-14 lg:pt-0">
       <div className="lg:hidden">
         <MobileNav items={sidebarItems} lang={params.lang} />
       </div>
