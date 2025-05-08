@@ -1,0 +1,394 @@
+{
+  "navbar": {
+    "home": "Home",
+    "writing": "Writing Info",
+    "faq": "FAQ",
+    "acknowledgements": "Acknowledgements",
+    "materials": "Materials",
+    "about": "About Us",
+    "contact": "Contact",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "language": "Language"
+  },
+  "footer": {
+    "copyright": "© 2025 Learn Mikrotik. All Rights Reserved.",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "contact": "Contact"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated",
+    "updateDate": "May 8, 2025"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "updateDate": "May 8, 2025"
+  },
+  "home": {
+    "newBadge": "Newly Launched",
+    "title": "Learn Mikrotik from Zero",
+    "tagline": "Free educational platform to learn Mikrotik easily and systematically",
+    "cta": "Start Learning",
+    "secondaryCta": "About Us",
+    "featuresTitle": "Why Learn Here?",
+    "featuresSubtitle": "We provide the best learning experience to understand Mikrotik quickly and effectively",
+    "features": [
+      {
+        "title": "Structured Materials",
+        "description": "Materials are systematically arranged from basic to advanced"
+      },
+      {
+        "title": "Practical and Applicable",
+        "description": "Focus on hands-on practice with real-world examples"
+      },
+      {
+        "title": "Free and Open",
+        "description": "All materials can be accessed for free and are open to the public"
+      },
+      {
+        "title": "Active Community",
+        "description": "Join the community for discussion and experience sharing"
+      }
+    ],
+    "stats": [
+      {
+        "value": "10K+",
+        "label": "Users"
+      },
+      {
+        "value": "50+",
+        "label": "Materials"
+      },
+      {
+        "value": "100+",
+        "label": "Tutorials"
+      },
+      {
+        "value": "24/7",
+        "label": "Support"
+      }
+    ],
+    "popularTitle": "Popular Materials",
+    "popularSubtitle": "Materials most frequently studied by our users",
+    "popularMaterials": [
+      {
+        "title": "Basic Introduction to Mikrotik RouterOS",
+        "description": "Learn the basics of Mikrotik RouterOS, its interface, and main features to start your journey with Mikrotik.",
+        "level": "Beginner",
+        "duration": "30 minutes",
+        "path": "1/1"
+      },
+      {
+        "title": "DHCP Server Configuration",
+        "description": "Learn how to set up a DHCP Server in Mikrotik for automatic IP distribution in your network.",
+        "level": "Intermediate",
+        "duration": "45 minutes",
+        "path": "3/2"
+      },
+      {
+        "title": "Bandwidth Management with Queue Tree",
+        "description": "Advanced techniques for bandwidth management using Queue Tree for more precise traffic control.",
+        "level": "Advanced",
+        "duration": "60 minutes",
+        "path": "4/2"
+      }
+    ],
+    "readMore": "Read More",
+    "viewAllMaterials": "View All Materials",
+    "testimonialsTitle": "What They Say?",
+    "testimonialsSubtitle": "Learning experiences from our platform users",
+    "testimonials": [
+      {
+        "name": "John Smith",
+        "role": "Network Engineer",
+        "quote": "This platform has been incredibly helpful in understanding Mikrotik from the basics. The materials are well-structured and easy to understand. I successfully obtained my MTCNA certification after learning here."
+      },
+      {
+        "name": "Sarah Johnson",
+        "role": "IT Support",
+        "quote": "As a beginner in the networking world, I found this platform extremely beneficial. The step-by-step tutorials made it easy for me to follow along and practice directly. Now I can configure Mikrotik routers with confidence."
+      },
+      {
+        "name": "Michael Brown",
+        "role": "Internet Cafe Owner",
+        "quote": "Thanks to the bandwidth management tutorials on this platform, I successfully optimized the network in my internet cafe. Customers are more satisfied and revenue has increased. Thank you Learn Mikrotik!"
+      }
+    ],
+    "ctaTitle": "Ready to Become a Mikrotik Expert?",
+    "ctaSubtitle": "Start your learning journey now and master Mikrotik with comprehensive and structured materials.",
+    "ctaButton": "Start Learning Now",
+    "ctaSecondaryButton": "Contact Us"
+  },
+  "writing": {
+    "title": "Writing Information",
+    "intro": "Guidelines for writing and contributing materials",
+    "guidelines": [
+      {
+        "title": "Writing Format",
+        "description": "Materials are written in Markdown format for ease of editing and consistency"
+      },
+      {
+        "title": "Content Structure",
+        "description": "Each material has a title, introduction, content, and conclusion"
+      },
+      {
+        "title": "Contribution",
+        "description": "You can contribute by submitting a pull request to our GitHub repository"
+      },
+      {
+        "title": "Language Style",
+        "description": "Use simple, clear, and easy-to-understand language"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions (FAQ)",
+    "questions": [
+      {
+        "question": "Do I need to have a Mikrotik device to learn?",
+        "answer": "Not necessarily. You can use simulators like GNS3 or VirtualBox for practice"
+      },
+      {
+        "question": "Is this material suitable for beginners?",
+        "answer": "Yes, the material is structured from the basics, making it suitable for beginners who have never used Mikrotik"
+      },
+      {
+        "question": "How long does it take to master Mikrotik?",
+        "answer": "Depending on the intensity of learning, usually 2-3 months to master the basics of Mikrotik"
+      },
+      {
+        "question": "Are there official Mikrotik certifications?",
+        "answer": "Yes, Mikrotik provides official certifications such as MTCNA, MTCRE, MTCINE, and others"
+      },
+      {
+        "question": "How can I contribute to the material?",
+        "answer": "You can contribute through GitHub by submitting pull requests or reporting issues"
+      }
+    ]
+  },
+  "acknowledgements": {
+    "title": "Acknowledgements",
+    "intro": "This website would not be possible without the help and support of:",
+    "contributors": [
+      {
+        "name": "Mikrotik Indonesia Community",
+        "contribution": "Valuable support and input"
+      },
+      {
+        "name": "Contributors",
+        "contribution": "Writing and improving materials"
+      },
+      {
+        "name": "Mikrotik",
+        "contribution": "Official documentation and resources"
+      },
+      {
+        "name": "Open Source Community",
+        "contribution": "Tools and libraries used"
+      }
+    ]
+  },
+  "materials": {
+    "title": "Basic Mikrotik Materials",
+    "intro": "Learn Mikrotik from the basics with structured materials",
+    "chapters": [
+      {
+        "title": "Chapter 1: Introduction to Mikrotik",
+        "sections": [
+          {
+            "title": "What is Mikrotik?",
+            "description": "Introduction to Mikrotik and its history"
+          },
+          {
+            "title": "Mikrotik Devices and RouterOS",
+            "description": "Various types of Mikrotik devices and RouterOS operating system"
+          },
+          {
+            "title": "Advantages and Disadvantages of Mikrotik",
+            "description": "Comparison of Mikrotik with other networking solutions"
+          }
+        ]
+      },
+      {
+        "title": "Chapter 2: Installation and Initial Setup",
+        "sections": [
+          {
+            "title": "Install RouterOS",
+            "description": "How to install RouterOS on Mikrotik devices"
+          },
+          {
+            "title": "Initial Configuration",
+            "description": "Basic configuration steps after installation"
+          },
+          {
+            "title": "Accessing Mikrotik Router",
+            "description": "Various ways to access and manage Mikrotik routers"
+          }
+        ]
+      },
+      {
+        "title": "Chapter 3: Basic Network Configuration",
+        "sections": [
+          {
+            "title": "IP Address Configuration",
+            "description": "How to set IP addresses on Mikrotik interfaces"
+          },
+          {
+            "title": "DHCP Server",
+            "description": "Setting up DHCP Server for automatic IP distribution"
+          },
+          {
+            "title": "Basic NAT and Firewall",
+            "description": "Configuration of Network Address Translation and basic firewall"
+          }
+        ]
+      },
+      {
+        "title": "Chapter 4: Bandwidth Management",
+        "sections": [
+          {
+            "title": "Simple Queue",
+            "description": "Bandwidth management using Simple Queue"
+          },
+          {
+            "title": "Queue Tree",
+            "description": "Advanced bandwidth management with Queue Tree"
+          },
+          {
+            "title": "PCQ (Per Connection Queue)",
+            "description": "Implementation of PCQ for fair bandwidth distribution"
+          }
+        ]
+      },
+      {
+        "title": "Chapter 5: Wireless and Hotspot",
+        "sections": [
+          {
+            "title": "Wireless Configuration",
+            "description": "Setting up wireless access points on Mikrotik"
+          },
+          {
+            "title": "Hotspot Setup",
+            "description": "Creating and configuring hotspot services"
+          },
+          {
+            "title": "User Manager",
+            "description": "Managing hotspot users with User Manager"
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "intro": "Get to know the Learn Mikrotik platform better",
+    "mission": {
+      "title": "Our Mission",
+      "description": "Our mission is to provide quality, structured, and easily accessible Mikrotik learning materials for everyone. We believe that computer networking knowledge, especially Mikrotik, should be accessible to anyone without barriers."
+    },
+    "story": {
+      "title": "Our Story",
+      "description": "Learn Mikrotik started in 2020 by a group of network engineers who saw the lack of structured and comprehensive Mikrotik learning resources in English. Starting from simple tutorials, we have now grown into a learning platform used by thousands of users worldwide."
+    },
+    "team": {
+      "title": "Our Team",
+      "members": [
+        {
+          "name": "Andy Wilson",
+          "role": "Founder & Lead Instructor",
+          "bio": "Over 10 years of experience in computer networking and holds MTCNA, MTCRE, and MTCINE certifications."
+        },
+        {
+          "name": "Bob Stewart",
+          "role": "Technical Writer",
+          "bio": "Technical documentation specialist with a background in IT education."
+        },
+        {
+          "name": "Claire Davis",
+          "role": "Community Manager",
+          "bio": "Manages the community and ensures users get the support they need."
+        },
+        {
+          "name": "David Kennedy",
+          "role": "Content Developer",
+          "bio": "Expert in developing interactive learning content and network simulations."
+        }
+      ]
+    },
+    "values": {
+      "title": "Our Values",
+      "list": [
+        {
+          "title": "Quality",
+          "description": "We are committed to providing high-quality learning materials that are accurate and up-to-date."
+        },
+        {
+          "title": "Accessibility",
+          "description": "We believe that education should be accessible to everyone, regardless of background or financial ability."
+        },
+        {
+          "title": "Community",
+          "description": "We value the power of community and encourage collaboration and knowledge sharing."
+        },
+        {
+          "title": "Innovation",
+          "description": "We continuously innovate in teaching methods and content delivery to enhance the learning experience."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "intro": "Have questions or feedback? Don't hesitate to contact us.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Your message has been sent. We will contact you soon.",
+      "error": "An error occurred. Please try again later."
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "info@learnmikrotik.com",
+      "phone": "+1 234 567 8900",
+      "address": "123 Example St., New York, USA",
+      "hours": "Monday - Friday: 9:00 AM - 5:00 PM EST"
+    },
+    "faq": {
+      "title": "Common Questions",
+      "questions": [
+        {
+          "question": "How long does it take to get a response to inquiries?",
+          "answer": "We strive to respond to all inquiries within 24 hours on business days."
+        },
+        {
+          "question": "Is there a discussion group for users?",
+          "answer": "Yes, we have a Telegram group and discussion forum that can be accessed through the Community page."
+        },
+        {
+          "question": "How do I report errors in the materials?",
+          "answer": "You can report errors through this contact form or through our GitHub repository."
+        }
+      ]
+    }
+  },
+  "materialDetail": {
+    "backToMaterials": "Back to Materials List",
+    "nextMaterial": "Next Material",
+    "prevMaterial": "Previous Material",
+    "lastUpdated": "Last updated",
+    "difficulty": "Difficulty Level",
+    "duration": "Duration",
+    "prerequisites": "Prerequisites",
+    "relatedMaterials": "Related Materials",
+    "downloadPdf": "Download PDF",
+    "shareTitle": "Share",
+    "tableOfContents": "Table of Contents",
+    "references": "References"
+  }
+}
