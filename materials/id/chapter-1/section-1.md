@@ -64,13 +64,13 @@ RouterOS memiliki berbagai fitur untuk jaringan dan manajemen konektivitas, term
 
 Berikut contoh konfigurasi dasar untuk mengatur IP Address pada interface:
 
-\`\`\`
+```
 # Menambahkan IP Address ke interface ether1
 /ip address add address=192.168.1.1/24 interface=ether1
 
 # Mengatur default gateway
 /ip route add dst-address=0.0.0.0/0 gateway=192.168.1.254
-\`\`\`
+```
 
 ## Kesimpulan {#kesimpulan}
 
