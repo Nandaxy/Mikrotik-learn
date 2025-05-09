@@ -86,7 +86,7 @@ export default async function Home({ params }: { params: { lang: string } }) {
 						</div>
 						<div className="flex items-center justify-center">
 							<Image
-								src="/placeholder.svg?height=400&width=600"
+								src="/image/Landing-cat.png"
 								width={600}
 								height={400}
 								alt="Mikrotik Router Illustration"

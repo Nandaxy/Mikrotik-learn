@@ -14,6 +14,12 @@ export async function generateMetadata({ params }: { params: { lang: string } })
   }
 }
 
+const imageUrls = [
+  "/image/zenn.png",
+  "/image/miaw.png",
+];
+
+
 export default async function AboutPage({ params }: { params: { lang: string } }) {
   const { lang } = await params
   const dict = await getDictionary(lang as "id" | "en")
@@ -42,7 +48,7 @@ export default async function AboutPage({ params }: { params: { lang: string } }
           </div>
           <div className="flex items-center justify-center">
             <Image
-              src="/placeholder.svg?height=300&width=400"
+              src="/image/app-logo.png"
               width={400}
               height={300}
               alt="Our Mission"
@@ -55,7 +61,7 @@ export default async function AboutPage({ params }: { params: { lang: string } }
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <div className="order-2 lg:order-1 flex items-center justify-center">
             <Image
-              src="/placeholder.svg?height=300&width=400"
+              src="/image/story-cat.png"
               width={400}
               height={300}
               alt="Our Story"
@@ -76,13 +82,14 @@ export default async function AboutPage({ params }: { params: { lang: string } }
               <Card key={index} className="h-full">
                 <CardHeader className="pb-2">
                   <div className="flex justify-center mb-4">
-                    <Image
-                      src={`/placeholder.svg?height=100&width=100`}
-                      width={100}
-                      height={100}
-                      alt={member.name}
-                      className="rounded-full object-cover"
-                    />
+<Image
+  src={imageUrls[index % imageUrls.length]}
+  width={100}
+  height={100}
+  alt={member.name}
+  className="rounded-full object-cover"
+/>
+
                   </div>
                   <CardTitle className="text-center">{member.name}</CardTitle>
                   <CardDescription className="text-center">{member.role}</CardDescription>
