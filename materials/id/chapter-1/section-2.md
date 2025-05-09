@@ -2,10 +2,10 @@
 title: Perangkat Mikrotik dan RouterOS
 difficulty: Pemula
 difficultyEn: Beginner
-duration: 35 menit
+duration: 30 menit
 prerequisites:
-  - Pengetahuan dasar tentang Mikrotik
-  - Pemahaman dasar jaringan komputer
+  - Telah memahami pengenalan Mikrotik
+  - Pengetahuan dasar jaringan komputer
 relatedMaterials:
   - title: Apa itu Mikrotik?
     path: /id/materials/1/1
@@ -14,84 +14,74 @@ relatedMaterials:
 tableOfContents:
   - title: Pendahuluan
     id: pendahuluan
-  - title: RouterBoard
-    id: routerboard
+  - title: Jenis Perangkat Mikrotik
+    id: jenis-perangkat
   - title: RouterOS
     id: routeros
-  - title: Lisensi RouterOS
-    id: lisensi
-  - title: Cara Mengakses RouterOS
-    id: cara-akses
+  - title: Perbandingan Hardware dan Software
+    id: perbandingan
   - title: Kesimpulan
     id: kesimpulan
+references:
+  - title: ChatGPT
 ---
 
 ## Pendahuluan {#pendahuluan}
 
-Pada materi sebelumnya, kita telah mengenal apa itu Mikrotik secara umum. Kali ini, kita akan mempelajari lebih detail tentang perangkat keras Mikrotik (RouterBoard) dan sistem operasinya (RouterOS).
+Setelah memahami pengertian dasar Mikrotik, langkah selanjutnya adalah mengenal berbagai **perangkat Mikrotik** dan sistem operasi utamanya yaitu **RouterOS**. Materi ini membahas jenis-jenis perangkat, fungsi RouterOS, serta kelebihan masing-masing bentuk implementasi Mikrotik baik dalam bentuk hardware maupun software.
 
-## RouterBoard {#routerboard}
+## Jenis Perangkat Mikrotik {#jenis-perangkat}
 
-RouterBoard adalah perangkat keras yang dikembangkan oleh Mikrotik. Perangkat ini dirancang khusus untuk menjalankan RouterOS dengan optimal. RouterBoard hadir dalam berbagai bentuk dan ukuran, mulai dari perangkat kecil untuk rumah hingga perangkat enterprise untuk ISP.
+Mikrotik menyediakan dua bentuk perangkat utama:
 
-![RouterBoard](/placeholder.svg?height=300&width=500)
+### 1. RouterBOARD
 
-Beberapa seri RouterBoard yang populer:
+RouterBOARD adalah perangkat keras (hardware) buatan Mikrotik yang sudah dilengkapi dengan sistem operasi RouterOS. Contohnya seperti RB750, RB951, RB2011, hingga Cloud Core Router (CCR).
 
-1. **hAP Series**: Home Access Point, cocok untuk penggunaan rumahan
-2. **RB Series**: RouterBoard standar dengan berbagai pilihan port dan fitur
-3. **CCR Series**: CloudCore Router, untuk kebutuhan enterprise dengan performa tinggi
-4. **CRS Series**: Cloud Router Switch, kombinasi router dan switch untuk jaringan yang lebih kompleks
-5. **wAP Series**: Wireless Access Point untuk kebutuhan outdoor
+![RouterBOARD Mikrotik](/image/materi/bab1/perangkat-mikrotilk.png)
+
+### 2. RouterOS pada PC
+
+RouterOS dapat diinstal di komputer biasa (x86 atau virtual machine) dan menjadikannya berfungsi sebagai router. Ini cocok digunakan untuk jaringan skala besar atau eksperimental dengan hardware sendiri.
 
 ## RouterOS {#routeros}
 
-RouterOS adalah sistem operasi berbasis Linux yang dikembangkan oleh Mikrotik. Sistem operasi ini dapat diinstal pada RouterBoard atau PC standar (x86). RouterOS dirancang khusus untuk kebutuhan networking dengan antarmuka yang mudah digunakan.
+**RouterOS** adalah sistem operasi berbasis Linux yang dikembangkan oleh Mikrotik. Sistem ini memungkinkan perangkat menjadi:
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;">
-  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div>
+- Router (static, dynamic routing)
+- Firewall
+- Wireless Access Point
+- DHCP Server
+- Bandwidth Shaper
+- VPN Server/Client
 
-RouterOS memiliki versi yang terus diperbarui. Setiap versi memiliki fitur dan perbaikan baru. Versi RouterOS ditandai dengan angka, misalnya RouterOS v6, v7, dll.
+### Antarmuka Pengguna
 
-## Lisensi RouterOS {#lisensi}
+RouterOS dapat dikonfigurasi melalui beberapa cara:
 
-RouterOS menggunakan sistem lisensi berbasis level. Setiap level memiliki batasan fitur yang berbeda:
+- **Winbox** – GUI ringan berbasis Windows (rekomendasi pemula)
+- **WebFig** – Akses via web browser
+- **Terminal CLI** – Untuk pengguna mahir menggunakan command line
+- **SSH/Telnet** – Akses remote jaringan
 
-| Level | Deskripsi | Penggunaan |
-|-------|-----------|------------|
-| 0 | Demo | Berfungsi selama 24 jam |
-| 1 | Free | Fitur terbatas, untuk penggunaan dasar |
-| 3 | WISP CPE | Untuk perangkat client ISP |
-| 4 | WISP | Untuk ISP skala kecil |
-| 5 | WISP | Untuk ISP skala menengah |
-| 6 | Controller | Untuk penggunaan enterprise |
+Berikut tampilan Winbox:
 
-Perangkat RouterBoard biasanya sudah dilengkapi dengan lisensi RouterOS level 4 atau 5.
+![Winbox Mikrotik](/image/materi/bab1/perangkat-mikrotilk.png)
+*Tampilan antarmuka Winbox RouterOS.*
 
-## Cara Mengakses RouterOS {#cara-akses}
+Video penjelasan singkat RouterOS:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BJqH4kG6-vo" frameborder="0" allowfullscreen></iframe>
 
-Ada beberapa cara untuk mengakses dan mengkonfigurasi RouterOS:
+## Perbandingan Hardware dan Software {#perbandingan}
 
-1. **Winbox**: Aplikasi GUI berbasis Windows yang paling populer
-   ![Winbox Interface](/placeholder.svg?height=300&width=500)
-
-2. **WebFig**: Antarmuka web yang dapat diakses melalui browser
-
-3. **CLI (Command Line Interface)**: Akses melalui terminal atau SSH
-
-4. **Mobile App**: Aplikasi mobile untuk monitoring dan konfigurasi dasar
-
-Contoh perintah dasar CLI untuk melihat interface:
-
-\`\`\`
-# Melihat daftar interface
-/interface print
-
-# Melihat status interface
-/interface monitor-traffic ether1
-\`\`\`
+| Aspek               | RouterBOARD (Hardware)                 | RouterOS (Software)                         |
+|---------------------|----------------------------------------|---------------------------------------------|
+| Instalasi           | Plug-and-play                          | Perlu instalasi manual                      |
+| Harga               | Lebih terjangkau untuk SOHO            | Bisa fleksibel (tergantung hardware PC)     |
+| Performa            | Disesuaikan dengan kebutuhan model     | Bisa tinggi tergantung spesifikasi PC       |
+| Fleksibilitas       | Terbatas pada fitur hardware bawaan    | Fleksibel (upgradeable)                     |
+| Cocok untuk         | Pengguna rumahan, UMKM, ISP kecil      | Jaringan besar, eksperimen, ISP             |
 
 ## Kesimpulan {#kesimpulan}
 
-Perangkat Mikrotik (RouterBoard) dan RouterOS menawarkan solusi jaringan yang lengkap dan fleksibel. Dengan berbagai pilihan perangkat dan level lisensi, Mikrotik dapat memenuhi kebutuhan jaringan dari skala kecil hingga enterprise. Pada materi selanjutnya, kita akan membahas kelebihan dan kekurangan Mikrotik dibandingkan dengan solusi networking lainnya.
+Mikrotik menyediakan dua pendekatan untuk membangun sistem jaringan: melalui perangkat RouterBOARD dan instalasi RouterOS di PC. Keduanya memiliki kelebihan masing-masing dan bisa digunakan sesuai kebutuhan. Pada materi selanjutnya, kita akan membahas **kelebihan dan kekurangan Mikrotik** secara lebih mendalam.

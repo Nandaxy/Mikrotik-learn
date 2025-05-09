@@ -5,9 +5,21 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import { Metadata } from "next"
+
+export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
+  
+  return {
+    title: dict.contact.metadata?.title || dict.contact.title,
+    description: dict.contact.metadata?.description || dict.contact.intro,
+  }
+}
 
 export default async function ContactPage({ params }: { params: { lang: string } }) {
-  const dict = await getDictionary(params.lang as "id" | "en")
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
   const { contact } = dict
 
   return (

@@ -1,8 +1,20 @@
+import { Metadata } from "next"
 import { getDictionary } from "../dictionaries"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
+export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
+
+  return {
+    title: dict.faq.metadata?.title || dict.faq.title,
+    description: dict.faq.metadata?.description
+  }
+}
+
 export default async function FAQPage({ params }: { params: { lang: string } }) {
-  const dict = await getDictionary(params.lang as "id" | "en")
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
   const { faq } = dict
 
   return (

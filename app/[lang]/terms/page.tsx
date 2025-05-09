@@ -2,8 +2,19 @@ import { getDictionary } from "../dictionaries"
 import { MarkdownContent } from "@/components/markdown-content"
 import { getTermsContent } from "@/lib/static-content"
 
+export const generateMetadata = async ({ params }: { params: { lang: string } }) => {
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
+
+  return {
+    title: dict.terms.metadata?.title || dict.terms.title,
+    description: dict.terms.metadata?.description
+  }
+}
+
 export default async function TermsPage({ params }: { params: { lang: string } }) {
-  const dict = await getDictionary(params.lang as "id" | "en")
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
   const { terms } = dict
 
   // Get terms content based on language

@@ -2,9 +2,21 @@ import Image from "next/image"
 import { getDictionary } from "../dictionaries"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Target, BookOpen, Users, Lightbulb } from "lucide-react"
+import { Metadata } from "next"
+
+export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
+
+  return {
+    title: dict.about.metadata?.title || dict.about.title,
+    description: dict.about.metadata?.description || dict.about.intro,
+  }
+}
 
 export default async function AboutPage({ params }: { params: { lang: string } }) {
-  const dict = await getDictionary(params.lang as "id" | "en")
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
   const { about } = dict
 
   const valueIcons = [

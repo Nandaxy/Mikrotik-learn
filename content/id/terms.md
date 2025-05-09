@@ -1,5 +1,3 @@
-# Ketentuan Layanan
-
 ## 1. Penerimaan Ketentuan
 
 Dengan mengakses dan menggunakan platform Belajar Mikrotik, Anda menyetujui untuk terikat oleh ketentuan layanan ini. Jika Anda tidak setuju dengan ketentuan ini, harap tidak menggunakan platform kami.

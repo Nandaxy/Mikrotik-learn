@@ -9,11 +9,89 @@ import { getMaterialContent } from "@/lib/materials"
 import ShareButton from "@/components/share-button"
 import GeneratePDF from "@/components/generate-pdf"
 import { MarkdownContent } from "@/components/markdown-content"
+import { Metadata } from "next"
 
-export const metadata = {
-  other: {
-    scrollToTop: true,
-  },
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: string; chapter: string; section: string }
+}): Promise<Metadata> {
+  const { lang, chapter, section } = await params
+  const dict = await getDictionary(lang as "id" | "en")
+  const { materials } = dict
+
+  const chapterIndex = Number.parseInt(chapter) - 1
+  const sectionIndex = Number.parseInt(section) - 1
+
+  // Check if chapter exists
+  if (chapterIndex >= materials.chapters.length || chapterIndex < 0) {
+    return {
+      title: dict.materialDetail.notFoundTitle,
+      description: dict.materialDetail.notFoundDescription,
+    }
+  }
+
+  const chapterObj = materials.chapters[chapterIndex]
+  
+  // Check if section exists
+  if (sectionIndex >= chapterObj.sections.length || sectionIndex < 0) {
+    return {
+      title: dict.materialDetail.notFoundTitle,
+      description: dict.materialDetail.notFoundDescription,
+    }
+  }
+
+  const sectionObj = chapterObj.sections[sectionIndex]
+  const content = await getMaterialContent(lang, chapter, section)
+
+  const description = content.content
+    .replace(/\*\*/g, '')
+    .replace(/\#\#*/g, '')
+    .replace(/\!\[.*?\]\(.*?\)/g, '')
+    .replace(/\[.*?\]\(.*?\)/g, '')
+    .replace(/\`\`\`[\s\S]*?\`\`\`/g, '')
+    .trim()
+    .substring(0, 157) + '...'
+
+  const keywords = [
+    sectionObj?.title,
+    chapterObj?.title,
+    content.metadata.difficulty || content.metadata.difficultyEn,
+    ...content.metadata.prerequisites || [],
+    ...(content.metadata.keywords || [])
+  ].filter(Boolean).join(', ')
+
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://belajar-mikrotik.vercel.app"
+  const canonicalUrl = `${siteUrl}/${lang}/materials/${chapter}/${section}`
+
+  return {
+    title: `${sectionObj?.title || "Material"} | ${chapterObj?.title || "Learning Platform"}`,
+    description: description,
+    keywords: keywords,
+    authors: [{ name: "Belajar MikroTik" }],
+    openGraph: {
+      title: sectionObj?.title || "Material",
+      description: description,
+      type: "article",
+      url: canonicalUrl,
+      siteName: lang === "id" ? "Belajar MikroTik" : "Learn MikroTik",
+      locale: lang === "id" ? "id_ID" : "en_US",
+      publishedTime: content.metadata.publishedAt || new Date().toISOString(),
+      modifiedTime: content.metadata.updatedAt || new Date().toISOString(),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: sectionObj?.title || "Material",
+      description: description,
+    },
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        "id": `${siteUrl}/id/materials/${chapter}/${section}`,
+        "en": `${siteUrl}/en/materials/${chapter}/${section}`,
+      }
+    },
+  }
 }
 
 export default async function MaterialDetailPage({
@@ -21,69 +99,91 @@ export default async function MaterialDetailPage({
 }: {
   params: { lang: string; chapter: string; section: string }
 }) {
-  const dict = await getDictionary(params.lang as "id" | "en")
+  const { lang, chapter, section } =  await params
+  const dict = await getDictionary(lang as "id" | "en")
   const { materialDetail, materials } = dict
 
-  // Get chapter and section from params
-  const chapterIndex = Number.parseInt(params.chapter) - 1
-  const sectionIndex = Number.parseInt(params.section) - 1
+  const chapterIndex = Number.parseInt(chapter) - 1
+  const sectionIndex = Number.parseInt(section) - 1
 
-  // Get chapter and section data
-  const chapter = materials.chapters[chapterIndex]
-  const section = chapter?.sections[sectionIndex]
+  // Check if chapter exists
+  if (chapterIndex >= materials.chapters.length || chapterIndex < 0) {
+    return (
+      <div className="container py-8 text-center">
+        <h1 className="text-2xl font-bold">{materialDetail.notFoundTitle || "Material not found"}</h1>
+        <p className="mt-4">{materialDetail.notFoundDescription || "Material not found"}</p>
+        <Link href={`/${lang}/materials`} className="mt-6 inline-block">
+          <Button variant="outline">
+            <ChevronLeft className="mr-2 h-4 w-4" />
+            {materialDetail.backToMaterials}
+          </Button>
+        </Link>
+      </div>
+    )
+  }
 
-  // Get material content
-  const content = await getMaterialContent(params.lang, params.chapter, params.section)
+  const chapterObj = materials.chapters[chapterIndex]
+  
+  // Check if section exists
+  if (sectionIndex >= chapterObj.sections.length || sectionIndex < 0) {
+    return (
+      <div className="container py-8 text-center">
+        <h1 className="text-2xl font-bold">{materialDetail.notFoundTitle}</h1>
+        <p className="mt-4">{materialDetail.notFoundDescription}</p>
+        <Link href={`/${lang}/materials`} className="mt-6 inline-block">
+          <Button variant="outline">
+            <ChevronLeft className="mr-2 h-4 w-4" />
+            {materialDetail.backToMaterials}
+          </Button>
+        </Link>
+      </div>
+    )
+  }
 
-  // Calculate next and previous links
+  const sectionObj = chapterObj.sections[sectionIndex]
+  const content = await getMaterialContent(lang, chapter, section)
+
   let prevLink = null
   let nextLink = null
 
   if (sectionIndex > 0) {
-    // Previous section in same chapter
-    prevLink = `/${params.lang}/materials/${params.chapter}/${sectionIndex}`
+    prevLink = `/${lang}/materials/${chapter}/${sectionIndex}`
   } else if (chapterIndex > 0) {
-    // Last section of previous chapter
     const prevChapter = materials.chapters[chapterIndex - 1]
-    prevLink = `/${params.lang}/materials/${chapterIndex}/${prevChapter.sections.length}`
+    prevLink = `/${lang}/materials/${chapterIndex}/${prevChapter.sections.length}`
   }
 
-  if (sectionIndex < chapter?.sections.length - 1) {
-    // Next section in same chapter
-    nextLink = `/${params.lang}/materials/${params.chapter}/${sectionIndex + 2}`
+  if (sectionIndex < chapterObj.sections.length - 1) {
+    nextLink = `/${lang}/materials/${chapter}/${sectionIndex + 2}`
   } else if (chapterIndex < materials.chapters.length - 1) {
-    // First section of next chapter
-    nextLink = `/${params.lang}/materials/${chapterIndex + 2}/1`
+    nextLink = `/${lang}/materials/${chapterIndex + 2}/1`
   }
 
-  // Process table of contents to remove {#id} format
   const processedTableOfContents = content.metadata.tableOfContents.map((item) => ({
     ...item,
-    title: item.title.replace(/\s+\{#.*?\}$/, ""), // Remove {#id} from title
+    title: item.title.replace(/\s+\{#.*?\}$/, ""),
   }))
 
-  // Material metadata
   const materialData = {
-    title: section?.title || "Material Not Found",
-    lastUpdated: "2025-05-08",
-    difficulty: params.lang === "id" ? content.metadata.difficulty : content.metadata.difficultyEn,
+    title: sectionObj?.title || content.metadata.title,
+    lastUpdated: content.metadata.updatedAt || "2025-05-08",
+    difficulty: lang === "id" ? content.metadata.difficulty : content.metadata.difficultyEn,
     duration: content.metadata.duration,
     prerequisites: content.metadata.prerequisites,
     relatedMaterials: content.metadata.relatedMaterials,
     tableOfContents: processedTableOfContents,
-    references: content.metadata.references || [], // Tambahkan references
+    references: content.metadata.references || [],
   }
 
-  const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://belajarmikrotik.id"}/${params.lang}/materials/${params.chapter}/${params.section}`
+  const currentUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://belajar-mikrotik.vercel.app"}/${lang}/materials/${chapter}/${section}`
 
   return (
     <div className="container py-0.5 md:py-8 lg:py-12">
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_300px]">
         <div className="space-y-6">
-          {/* Breadcrumb */}
           <div>
             <Link
-              href={`/${params.lang}/materials`}
+              href={`/${lang}/materials`}
               className="flex items-center text-sm text-muted-foreground hover:text-foreground"
             >
               <ChevronLeft className="mr-1 h-4 w-4" />
@@ -91,13 +191,12 @@ export default async function MaterialDetailPage({
             </Link>
           </div>
 
-          {/* Material Header */}
           <div className="space-y-3">
             <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">{materialData.title}</h1>
             <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
               <div className="flex items-center">
                 <FileText className="mr-1 h-4 w-4" />
-                {chapter?.title}
+                {chapterObj?.title}
               </div>
               <span>•</span>
               <div className="flex items-center">
@@ -114,12 +213,10 @@ export default async function MaterialDetailPage({
             </div>
           </div>
 
-          {/* Material Content */}
           <div className="pt-2">
             <MarkdownContent content={content.content} />
           </div>
 
-          {/* Navigation Buttons */}
           <div className="flex flex-wrap justify-between gap-4 pt-6">
             {prevLink ? (
               <Link href={prevLink} className="flex-shrink-0">
@@ -144,44 +241,42 @@ export default async function MaterialDetailPage({
           </div>
         </div>
 
-        {/* Sidebar */}
         <div className="space-y-6">
-          {/* Actions */}
           <Card>
             <CardHeader className="pb-3">
-              <CardTitle className="text-lg">{params.lang === "id" ? "Tindakan" : "Actions"}</CardTitle>
+              <CardTitle className="text-lg">{lang === "id" ? "Tindakan" : "Actions"}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <GeneratePDF
                 title={materialData.title}
                 content={content.content}
-                lang={params.lang}
+                lang={lang}
                 buttonText={materialDetail.downloadPdf}
               />
               <ShareButton url={currentUrl} title={materialData.title} buttonText={materialDetail.shareTitle} />
             </CardContent>
           </Card>
 
-          {/* Table of Contents */}
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-lg">{materialDetail.tableOfContents}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <nav className="space-y-1">
-                {materialData.tableOfContents.map((item, index) => (
-                  <a key={index} href={`#${item.id}`} className="block text-sm hover:text-primary py-1">
-                    {item.title}
-                  </a>
-                ))}
-              </nav>
-            </CardContent>
-          </Card>
+          {materialData.tableOfContents.length > 0 && (
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">{materialDetail.tableOfContents}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <nav className="space-y-1">
+                  {materialData.tableOfContents.map((item, index) => (
+                    <a key={index} href={`#${item.id}`} className="block text-sm hover:text-primary py-1">
+                      {item.title}
+                    </a>
+                  ))}
+                </nav>
+              </CardContent>
+            </Card>
+          )}
 
-          {/* Info */}
           <Card>
             <CardHeader className="pb-3">
-              <CardTitle className="text-lg">{params.lang === "id" ? "Informasi" : "Information"}</CardTitle>
+              <CardTitle className="text-lg">{lang === "id" ? "Informasi" : "Information"}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
@@ -193,43 +288,45 @@ export default async function MaterialDetailPage({
                 <p className="text-sm text-muted-foreground">{materialData.duration}</p>
               </div>
               <Separator />
-              <div>
-                <p className="text-sm font-medium">{materialDetail.prerequisites}</p>
-                <ul className="mt-2 space-y-1">
-                  {materialData.prerequisites.map((prereq, index) => (
-                    <li key={index} className="text-sm text-muted-foreground">
-                      • {prereq}
+              {materialData.prerequisites.length > 0 && (
+                <div>
+                  <p className="text-sm font-medium">{materialDetail.prerequisites}</p>
+                  <ul className="mt-2 space-y-1">
+                    {materialData.prerequisites.map((prereq, index) => (
+                      <li key={index} className="text-sm text-muted-foreground">
+                        • {prereq}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {materialData.relatedMaterials.length > 0 && (
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">{materialDetail.relatedMaterials}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {materialData.relatedMaterials.map((material, index) => (
+                    <li key={index}>
+                      <Link href={material.path} className="text-sm hover:text-primary">
+                        {material.title}
+                      </Link>
                     </li>
                   ))}
                 </ul>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          )}
 
-          {/* Related Materials */}
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-lg">{materialDetail.relatedMaterials}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {materialData.relatedMaterials.map((material, index) => (
-                  <li key={index}>
-                    <Link href={material.path} className="text-sm hover:text-primary">
-                      {material.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-
-          {/* References */}
           {materialData.references.length > 0 && (
             <Card>
               <CardHeader className="pb-3">
                 <CardTitle className="text-lg">
-                  {materialDetail.references || (params.lang === "id" ? "Referensi" : "References")}
+                  {materialDetail.references || (lang === "id" ? "Referensi" : "References")}
                 </CardTitle>
               </CardHeader>
               <CardContent>

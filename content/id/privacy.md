@@ -1,5 +1,3 @@
-# Kebijakan Privasi
-
 ## 1. Pendahuluan
 
 Belajar Mikrotik ("kami", "kita", atau "platform kami") berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat Anda menggunakan platform kami.

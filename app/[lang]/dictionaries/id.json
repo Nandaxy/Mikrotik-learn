@@ -1,394 +1,419 @@
 {
-  "navbar": {
-    "home": "Beranda",
-    "writing": "Info Penulisan",
-    "faq": "FAQ",
-    "acknowledgements": "Terima Kasih",
-    "materials": "Materi",
-    "about": "Tentang Kami",
-    "contact": "Kontak",
-    "darkMode": "Mode Gelap",
-    "lightMode": "Mode Terang",
-    "language": "Bahasa"
-  },
-  "footer": {
-    "copyright": "© 2025 Belajar Mikrotik. Hak Cipta Dilindungi.",
-    "terms": "Ketentuan Layanan",
-    "privacy": "Kebijakan Privasi",
-    "contact": "Kontak"
-  },
-  "terms": {
-    "title": "Ketentuan Layanan",
-    "lastUpdated": "Terakhir diperbarui",
-    "updateDate": "8 Mei 2025"
-  },
-  "privacy": {
-    "title": "Kebijakan Privasi",
-    "lastUpdated": "Terakhir diperbarui",
-    "updateDate": "8 Mei 2025"
-  },
-  "home": {
-    "newBadge": "Baru Diluncurkan",
-    "title": "Belajar Mikrotik dari Nol",
-    "tagline": "Platform edukasi gratis untuk mempelajari Mikrotik dengan mudah dan terstruktur",
-    "cta": "Mulai Belajar",
-    "secondaryCta": "Tentang Kami",
-    "featuresTitle": "Kenapa Belajar di Sini?",
-    "featuresSubtitle": "Kami menyediakan pengalaman belajar terbaik untuk memahami Mikrotik dengan cepat dan efektif",
-    "features": [
-      {
-        "title": "Materi Terstruktur",
-        "description": "Materi disusun secara sistematis dari dasar hingga mahir"
-      },
-      {
-        "title": "Praktis dan Aplikatif",
-        "description": "Fokus pada praktik langsung dengan contoh kasus nyata"
-      },
-      {
-        "title": "Gratis dan Terbuka",
-        "description": "Semua materi dapat diakses secara gratis dan terbuka untuk umum"
-      },
-      {
-        "title": "Komunitas Aktif",
-        "description": "Bergabung dengan komunitas untuk diskusi dan berbagi pengalaman"
-      }
-    ],
-    "stats": [
-      {
-        "value": "10K+",
-        "label": "Pengguna"
-      },
-      {
-        "value": "50+",
-        "label": "Materi"
-      },
-      {
-        "value": "100+",
-        "label": "Tutorial"
-      },
-      {
-        "value": "24/7",
-        "label": "Dukungan"
-      }
-    ],
-    "popularTitle": "Materi Populer",
-    "popularSubtitle": "Materi yang paling banyak dipelajari oleh pengguna kami",
-    "popularMaterials": [
-      {
-        "title": "Pengenalan Dasar Mikrotik RouterOS",
-        "description": "Pelajari dasar-dasar Mikrotik RouterOS, antarmuka, dan fitur utamanya untuk memulai perjalanan Anda dengan Mikrotik.",
-        "level": "Pemula",
-        "duration": "30 menit",
-        "path": "1/1"
-      },
-      {
-        "title": "Konfigurasi DHCP Server",
-        "description": "Pelajari cara mengatur DHCP Server di Mikrotik untuk distribusi IP otomatis di jaringan Anda.",
-        "level": "Menengah",
-        "duration": "45 menit",
-        "path": "3/2"
-      },
-      {
-        "title": "Manajemen Bandwidth dengan Queue Tree",
-        "description": "Teknik lanjutan untuk manajemen bandwidth menggunakan Queue Tree untuk kontrol trafik yang lebih presisi.",
-        "level": "Lanjutan",
-        "duration": "60 menit",
-        "path": "4/2"
-      }
-    ],
-    "readMore": "Baca Selengkapnya",
-    "viewAllMaterials": "Lihat Semua Materi",
-    "testimonialsTitle": "Apa Kata Mereka?",
-    "testimonialsSubtitle": "Pengalaman belajar dari pengguna platform kami",
-    "testimonials": [
-      {
-        "name": "Budi Santoso",
-        "role": "Network Engineer",
-        "quote": "Platform ini sangat membantu saya memahami Mikrotik dari dasar. Materi yang disajikan sangat terstruktur dan mudah dipahami. Saya berhasil mendapatkan sertifikasi MTCNA setelah belajar di sini."
-      },
-      {
-        "name": "Dewi Lestari",
-        "role": "IT Support",
-        "quote": "Sebagai pemula di dunia jaringan, saya menemukan platform ini sangat bermanfaat. Tutorial step-by-step memudahkan saya mengikuti dan mempraktikkan langsung. Sekarang saya bisa mengkonfigurasi router Mikrotik dengan percaya diri."
-      },
-      {
-        "name": "Ahmad Fauzi",
-        "role": "Pemilik Warnet",
-        "quote": "Berkat tutorial manajemen bandwidth di platform ini, saya berhasil mengoptimalkan jaringan di warnet saya. Pelanggan jadi lebih puas dan pendapatan meningkat. Terima kasih Belajar Mikrotik!"
-      }
-    ],
-    "ctaTitle": "Siap Menjadi Ahli Mikrotik?",
-    "ctaSubtitle": "Mulai perjalanan belajar Anda sekarang dan kuasai Mikrotik dengan materi yang komprehensif dan terstruktur.",
-    "ctaButton": "Mulai Belajar Sekarang",
-    "ctaSecondaryButton": "Hubungi Kami"
-  },
-  "writing": {
-    "title": "Info Penulisan",
-    "intro": "Panduan penulisan dan kontribusi materi",
-    "guidelines": [
-      {
-        "title": "Format Penulisan",
-        "description": "Materi ditulis dengan format Markdown untuk kemudahan pengeditan dan konsistensi"
-      },
-      {
-        "title": "Struktur Konten",
-        "description": "Setiap materi memiliki judul, pengantar, isi, dan kesimpulan"
-      },
-      {
-        "title": "Kontribusi",
-        "description": "Anda dapat berkontribusi dengan mengirimkan pull request di repositori GitHub kami"
-      },
-      {
-        "title": "Gaya Bahasa",
-        "description": "Gunakan bahasa yang sederhana, jelas, dan mudah dipahami"
-      }
-    ]
-  },
-  "faq": {
-    "title": "Pertanyaan Umum (FAQ)",
-    "questions": [
-      {
-        "question": "Apakah saya perlu memiliki perangkat Mikrotik untuk belajar?",
-        "answer": "Tidak harus. Anda dapat menggunakan simulator seperti GNS3 atau VirtualBox untuk praktik"
-      },
-      {
-        "question": "Apakah materi ini cocok untuk pemula?",
-        "answer": "Ya, materi disusun dari dasar sehingga cocok untuk pemula yang belum pernah menggunakan Mikrotik"
-      },
-      {
-        "question": "Berapa lama waktu yang dibutuhkan untuk menguasai Mikrotik?",
-        "answer": "Tergantung intensitas belajar, biasanya 2-3 bulan untuk menguasai dasar-dasar Mikrotik"
-      },
-      {
-        "question": "Apakah ada sertifikasi resmi Mikrotik?",
-        "answer": "Ya, Mikrotik menyediakan sertifikasi resmi seperti MTCNA, MTCRE, MTCINE, dan lainnya"
-      },
-      {
-        "question": "Bagaimana cara berkontribusi pada materi?",
-        "answer": "Anda dapat berkontribusi melalui GitHub dengan mengirimkan pull request atau melaporkan issue"
-      }
-    ]
-  },
-  "acknowledgements": {
-    "title": "Terima Kasih Untuk",
-    "intro": "Website ini tidak akan mungkin terwujud tanpa bantuan dan dukungan dari:",
-    "contributors": [
-      {
-        "name": "Komunitas Mikrotik Indonesia",
-        "contribution": "Dukungan dan masukan berharga"
-      },
-      {
-        "name": "Para Kontributor",
-        "contribution": "Penulisan dan perbaikan materi"
-      },
-      {
-        "name": "Mikrotik",
-        "contribution": "Dokumentasi dan sumber daya resmi"
-      },
-      {
-        "name": "Open Source Community",
-        "contribution": "Tools dan library yang digunakan"
-      }
-    ]
-  },
-  "materials": {
-    "title": "Materi Mikrotik Dasar",
-    "intro": "Pelajari Mikrotik dari dasar dengan materi yang terstruktur",
-    "chapters": [
-      {
-        "title": "Bab 1: Pengenalan Mikrotik",
-        "sections": [
-          {
-            "title": "Apa itu Mikrotik?",
-            "description": "Pengenalan tentang Mikrotik dan sejarahnya"
-          },
-          {
-            "title": "Perangkat Mikrotik dan RouterOS",
-            "description": "Berbagai jenis perangkat Mikrotik dan sistem operasi RouterOS"
-          },
-          {
-            "title": "Kelebihan dan Kekurangan Mikrotik",
-            "description": "Perbandingan Mikrotik dengan solusi networking lainnya"
-          }
-        ]
-      },
-      {
-        "title": "Bab 2: Instalasi dan Setup Awal",
-        "sections": [
-          {
-            "title": "Install RouterOS",
-            "description": "Cara menginstal RouterOS pada perangkat Mikrotik"
-          },
-          {
-            "title": "Konfigurasi Awal",
-            "description": "Langkah-langkah konfigurasi dasar setelah instalasi"
-          },
-          {
-            "title": "Mengakses Router Mikrotik",
-            "description": "Berbagai cara untuk mengakses dan mengelola router Mikrotik"
-          }
-        ]
-      },
-      {
-        "title": "Bab 3: Konfigurasi Jaringan Dasar",
-        "sections": [
-          {
-            "title": "Konfigurasi IP Address",
-            "description": "Cara mengatur alamat IP pada interface Mikrotik"
-          },
-          {
-            "title": "DHCP Server",
-            "description": "Mengatur DHCP Server untuk distribusi IP otomatis"
-          },
-          {
-            "title": "NAT dan Firewall Dasar",
-            "description": "Konfigurasi Network Address Translation dan firewall dasar"
-          }
-        ]
-      },
-      {
-        "title": "Bab 4: Manajemen Bandwidth",
-        "sections": [
-          {
-            "title": "Simple Queue",
-            "description": "Manajemen bandwidth menggunakan Simple Queue"
-          },
-          {
-            "title": "Queue Tree",
-            "description": "Manajemen bandwidth lanjutan dengan Queue Tree"
-          },
-          {
-            "title": "PCQ (Per Connection Queue)",
-            "description": "Implementasi PCQ untuk distribusi bandwidth yang adil"
-          }
-        ]
-      },
-      {
-        "title": "Bab 5: Wireless dan Hotspot",
-        "sections": [
-          {
-            "title": "Konfigurasi Wireless",
-            "description": "Mengatur access point wireless pada Mikrotik"
-          },
-          {
-            "title": "Setup Hotspot",
-            "description": "Membuat dan mengonfigurasi layanan hotspot"
-          },
-          {
-            "title": "User Manager",
-            "description": "Mengelola pengguna hotspot dengan User Manager"
-          }
-        ]
-      }
-    ]
-  },
-  "about": {
-    "title": "Tentang Kami",
-    "intro": "Mengenal lebih dekat platform Belajar Mikrotik",
-    "mission": {
-      "title": "Misi Kami",
-      "description": "Misi kami adalah menyediakan materi pembelajaran Mikrotik yang berkualitas, terstruktur, dan mudah diakses untuk semua orang. Kami percaya bahwa pengetahuan jaringan komputer, khususnya Mikrotik, seharusnya dapat diakses oleh siapa saja tanpa hambatan."
-    },
-    "story": {
-      "title": "Cerita Kami",
-      "description": "Belajar Mikrotik dimulai pada tahun 2020 oleh sekelompok engineer jaringan yang melihat kurangnya sumber belajar Mikrotik dalam Bahasa Indonesia yang terstruktur dan komprehensif. Berawal dari tutorial sederhana, kini kami telah berkembang menjadi platform pembelajaran yang digunakan oleh ribuan pengguna di seluruh Indonesia."
-    },
-    "team": {
-      "title": "Tim Kami",
-      "members": [
-        {
-          "name": "Andi Wijaya",
-          "role": "Founder & Lead Instructor",
-          "bio": "Berpengalaman lebih dari 10 tahun di bidang jaringan komputer dan memiliki sertifikasi MTCNA, MTCRE, dan MTCINE."
-        },
-        {
-          "name": "Budi Setiawan",
-          "role": "Technical Writer",
-          "bio": "Spesialis dokumentasi teknis dengan latar belakang di bidang pendidikan IT."
-        },
-        {
-          "name": "Citra Dewi",
-          "role": "Community Manager",
-          "bio": "Mengelola komunitas dan memastikan pengguna mendapatkan dukungan yang mereka butuhkan."
-        },
-        {
-          "name": "Deni Kurniawan",
-          "role": "Content Developer",
-          "bio": "Ahli dalam mengembangkan konten pembelajaran interaktif dan simulasi jaringan."
-        }
-      ]
-    },
-    "values": {
-      "title": "Nilai-Nilai Kami",
-      "list": [
-        {
-          "title": "Kualitas",
-          "description": "Kami berkomitmen untuk menyediakan materi pembelajaran berkualitas tinggi yang akurat dan up-to-date."
-        },
-        {
-          "title": "Aksesibilitas",
-          "description": "Kami percaya bahwa pendidikan harus dapat diakses oleh semua orang, tanpa memandang latar belakang atau kemampuan finansial."
-        },
-        {
-          "title": "Komunitas",
-          "description": "Kami menghargai kekuatan komunitas dan mendorong kolaborasi serta berbagi pengetahuan."
-        },
-        {
-          "title": "Inovasi",
-          "description": "Kami terus berinovasi dalam metode pengajaran dan penyampaian konten untuk meningkatkan pengalaman belajar."
-        }
-      ]
-    }
-  },
-  "contact": {
-    "title": "Hubungi Kami",
-    "intro": "Punya pertanyaan atau masukan? Jangan ragu untuk menghubungi kami.",
-    "form": {
-      "name": "Nama",
-      "email": "Email",
-      "subject": "Subjek",
-      "message": "Pesan",
-      "submit": "Kirim Pesan",
-      "success": "Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.",
-      "error": "Terjadi kesalahan. Silakan coba lagi nanti."
-    },
-    "info": {
-      "title": "Informasi Kontak",
-      "email": "info@belajarmikrotik.id",
-      "phone": "+62 812 3456 7890",
-      "address": "Jl. Contoh No. 123, Jakarta, Indonesia",
-      "hours": "Senin - Jumat: 09:00 - 17:00 WIB"
-    },
-    "faq": {
-      "title": "Pertanyaan Umum",
-      "questions": [
-        {
-          "question": "Berapa lama waktu respons untuk pertanyaan?",
-          "answer": "Kami berusaha merespons semua pertanyaan dalam waktu 24 jam pada hari kerja."
-        },
-        {
-          "question": "Apakah ada grup diskusi untuk pengguna?",
-          "answer": "Ya, kami memiliki grup Telegram dan forum diskusi yang dapat diakses melalui halaman Komunitas."
-        },
-        {
-          "question": "Bagaimana cara melaporkan kesalahan pada materi?",
-          "answer": "Anda dapat melaporkan kesalahan melalui formulir kontak ini atau melalui GitHub repository kami."
-        }
-      ]
-    }
-  },
-  "materialDetail": {
-    "backToMaterials": "Kembali ke Daftar Materi",
-    "nextMaterial": "Materi Selanjutnya",
-    "prevMaterial": "Materi Sebelumnya",
-    "lastUpdated": "Terakhir diperbarui",
-    "difficulty": "Tingkat Kesulitan",
-    "duration": "Durasi",
-    "prerequisites": "Prasyarat",
-    "relatedMaterials": "Materi Terkait",
-    "downloadPdf": "Unduh PDF",
-    "shareTitle": "Bagikan",
-    "tableOfContents": "Daftar Isi",
-    "references": "Referensi"
-  }
+	"navbar": {
+		"home": "Beranda",
+		"writing": "Info Penulisan",
+		"faq": "FAQ",
+		"acknowledgements": "Terima Kasih",
+		"materials": "Materi",
+		"about": "Tentang Kami",
+		"contact": "Kontak",
+		"darkMode": "Mode Gelap",
+		"lightMode": "Mode Terang",
+		"language": "Bahasa"
+	},
+	"footer": {
+		"copyright": "© 2025 Belajar Mikrotik. Hak Cipta Dilindungi.",
+		"terms": "Ketentuan Layanan",
+		"privacy": "Kebijakan Privasi",
+		"contact": "Kontak"
+	},
+	"terms": {
+		"metadata": {
+			"title": "Ketentuan Layanan",
+			"description": "Anda dapat berkontribusi dengan mengirimkan pull request di repositori GitHub kami"
+		},
+		"title": "Ketentuan Layanan",
+		"lastUpdated": "Terakhir diperbarui",
+		"updateDate": "8 Mei 2025"
+	},
+	"privacy": {
+		"metadata": {
+			"title": "Kebijakan Privasi",
+			"description": "Anda dapat berkontribusi dengan mengirimkan pull request di repositori GitHub kami"
+		},
+		"title": "Kebijakan Privasi",
+		"lastUpdated": "Terakhir diperbarui",
+		"updateDate": "8 Mei 2025"
+	},
+	"home": {
+		"newBadge": "Baru Diluncurkan",
+		"title": "Belajar Mikrotik dari Nol",
+		"tagline": "Platform edukasi gratis untuk mempelajari Mikrotik dengan mudah dan terstruktur",
+		"cta": "Mulai Belajar",
+		"secondaryCta": "Tentang Kami",
+		"featuresTitle": "Kenapa Belajar di Sini?",
+		"featuresSubtitle": "Kami menyediakan pengalaman belajar terbaik untuk memahami Mikrotik dengan cepat dan efektif",
+		"features": [
+			{
+				"title": "Materi Terstruktur",
+				"description": "Materi disusun secara sistematis dari dasar hingga mahir"
+			},
+			{
+				"title": "Praktis dan Aplikatif",
+				"description": "Fokus pada praktik langsung dengan contoh kasus nyata"
+			},
+			{
+				"title": "Gratis dan Terbuka",
+				"description": "Semua materi dapat diakses secara gratis dan terbuka untuk umum"
+			},
+			{
+				"title": "Komunitas Aktif",
+				"description": "Bergabung dengan komunitas untuk diskusi dan berbagi pengalaman"
+			}
+		],
+		"stats": [
+			{
+				"value": "10K+",
+				"label": "Pengguna"
+			},
+			{
+				"value": "50+",
+				"label": "Materi"
+			},
+			{
+				"value": "100+",
+				"label": "Tutorial"
+			},
+			{
+				"value": "24/7",
+				"label": "Dukungan"
+			}
+		],
+		"popularTitle": "Materi Populer",
+		"popularSubtitle": "Materi yang paling banyak dipelajari oleh pengguna kami",
+		"popularMaterials": [
+			{
+				"title": "Pengenalan Dasar Mikrotik RouterOS",
+				"description": "Pelajari dasar-dasar Mikrotik RouterOS, antarmuka, dan fitur utamanya untuk memulai perjalanan Anda dengan Mikrotik.",
+				"level": "Pemula",
+				"duration": "30 menit",
+				"path": "1/1"
+			},
+			{
+				"title": "Konfigurasi DHCP Server",
+				"description": "Pelajari cara mengatur DHCP Server di Mikrotik untuk distribusi IP otomatis di jaringan Anda.",
+				"level": "Menengah",
+				"duration": "45 menit",
+				"path": "3/2"
+			},
+			{
+				"title": "Manajemen Bandwidth dengan Queue Tree",
+				"description": "Teknik lanjutan untuk manajemen bandwidth menggunakan Queue Tree untuk kontrol trafik yang lebih presisi.",
+				"level": "Lanjutan",
+				"duration": "60 menit",
+				"path": "4/2"
+			}
+		],
+		"readMore": "Baca Selengkapnya",
+		"viewAllMaterials": "Lihat Semua Materi",
+		"testimonialsTitle": "Apa Kata Mereka?",
+		"testimonialsSubtitle": "Pengalaman belajar dari pengguna platform kami",
+		"testimonials": [
+			{
+				"name": "Budi Santoso",
+				"role": "Network Engineer",
+				"quote": "Platform ini sangat membantu saya memahami Mikrotik dari dasar. Materi yang disajikan sangat terstruktur dan mudah dipahami. Saya berhasil mendapatkan sertifikasi MTCNA setelah belajar di sini."
+			},
+			{
+				"name": "Dewi Lestari",
+				"role": "IT Support",
+				"quote": "Sebagai pemula di dunia jaringan, saya menemukan platform ini sangat bermanfaat. Tutorial step-by-step memudahkan saya mengikuti dan mempraktikkan langsung. Sekarang saya bisa mengkonfigurasi router Mikrotik dengan percaya diri."
+			},
+			{
+				"name": "Ahmad Fauzi",
+				"role": "Pemilik Warnet",
+				"quote": "Berkat tutorial manajemen bandwidth di platform ini, saya berhasil mengoptimalkan jaringan di warnet saya. Pelanggan jadi lebih puas dan pendapatan meningkat. Terima kasih Belajar Mikrotik!"
+			}
+		],
+		"ctaTitle": "Siap Menjadi Ahli Mikrotik?",
+		"ctaSubtitle": "Mulai perjalanan belajar Anda sekarang dan kuasai Mikrotik dengan materi yang komprehensif dan terstruktur.",
+		"ctaButton": "Mulai Belajar Sekarang",
+		"ctaSecondaryButton": "Hubungi Kami"
+	},
+	"writing": {
+		"metadata": {
+			"title": "Info Penulisan",
+			"description": "Anda dapat berkontribusi dengan mengirimkan pull request di repositori GitHub kami"
+		},
+		"title": "Info Penulisan",
+		"intro": "Panduan penulisan dan kontribusi materi",
+		"guidelines": [
+			{
+				"title": "Format Penulisan",
+				"description": "Materi ditulis dengan format Markdown untuk kemudahan pengeditan dan konsistensi"
+			},
+			{
+				"title": "Struktur Konten",
+				"description": "Setiap materi memiliki judul, pengantar, isi, dan kesimpulan"
+			},
+			{
+				"title": "Kontribusi",
+				"description": "Anda dapat berkontribusi dengan mengirimkan pull request di repositori GitHub kami"
+			},
+			{
+				"title": "Gaya Bahasa",
+				"description": "Gunakan bahasa yang sederhana, jelas, dan mudah dipahami"
+			}
+		]
+	},
+	"faq": {
+		"title": "Pertanyaan Umum (FAQ)",
+		"metadata": {
+			"title": "Pertanyaan Umum",
+			"description": "Berapa lama waktu respons untuk pertanyaan? Apakah ada grup diskusi untuk pengguna? Bagaimana cara melaporkan kesalahan pada materi?"
+		},
+		"questions": [
+			{
+				"question": "Apakah saya perlu memiliki perangkat Mikrotik untuk belajar?",
+				"answer": "Tidak harus. Anda dapat menggunakan simulator seperti GNS3 atau VirtualBox untuk praktik"
+			},
+			{
+				"question": "Apakah materi ini cocok untuk pemula?",
+				"answer": "Ya, materi disusun dari dasar sehingga cocok untuk pemula yang belum pernah menggunakan Mikrotik"
+			},
+			{
+				"question": "Berapa lama waktu yang dibutuhkan untuk menguasai Mikrotik?",
+				"answer": "Tergantung intensitas belajar, biasanya 2-3 bulan untuk menguasai dasar-dasar Mikrotik"
+			},
+			{
+				"question": "Apakah ada sertifikasi resmi Mikrotik?",
+				"answer": "Ya, Mikrotik menyediakan sertifikasi resmi seperti MTCNA, MTCRE, MTCINE, dan lainnya"
+			},
+			{
+				"question": "Bagaimana cara berkontribusi pada materi?",
+				"answer": "Anda dapat berkontribusi melalui GitHub dengan mengirimkan pull request atau melaporkan issue"
+			}
+		]
+	},
+	"acknowledgements": {
+		"metadata": {
+			"title": "Terima Kasih Untuk",
+			"description": "Website ini tidak akan mungkin terwujud tanpa bantuan dan dukungan dari:"
+		},
+		"title": "Terima Kasih Untuk",
+		"intro": "Website ini tidak akan mungkin terwujud tanpa bantuan dan dukungan dari:",
+		"contributors": [
+			{
+				"name": "Komunitas Mikrotik Indonesia",
+				"contribution": "Dukungan dan masukan berharga"
+			},
+			{
+				"name": "Para Kontributor",
+				"contribution": "Penulisan dan perbaikan materi"
+			},
+			{
+				"name": "Mikrotik",
+				"contribution": "Dokumentasi dan sumber daya resmi"
+			},
+			{
+				"name": "Open Source Community",
+				"contribution": "Tools dan library yang digunakan"
+			}
+		]
+	},
+	"materials": {
+		"metadata": {
+			"title": "Materi Mikrotik Dasar",
+			"description": "Pelajari Mikrotik dari dasar dengan materi yang terstruktur"
+		},
+		"title": "Materi Mikrotik Dasar",
+		"intro": "Pelajari Mikrotik dari dasar dengan materi yang terstruktur",
+		"chapters": [
+			{
+				"title": "Bab 1: Pengenalan Mikrotik",
+				"sections": [
+					{
+						"title": "Apa itu Mikrotik?",
+						"description": "Pengenalan tentang Mikrotik dan sejarahnya"
+					},
+					{
+						"title": "Perangkat Mikrotik dan RouterOS",
+						"description": "Berbagai jenis perangkat Mikrotik dan sistem operasi RouterOS"
+					},
+					{
+						"title": "Kelebihan dan Kekurangan Mikrotik",
+						"description": "Perbandingan Mikrotik dengan solusi networking lainnya"
+					}
+				]
+			},
+			{
+				"title": "Bab 2: Instalasi dan Setup Awal",
+				"sections": [
+					{
+						"title": "Install RouterOS",
+						"description": "Cara menginstal RouterOS pada perangkat Mikrotik"
+					},
+					{
+						"title": "Konfigurasi Awal",
+						"description": "Langkah-langkah konfigurasi dasar setelah instalasi"
+					},
+					{
+						"title": "Mengakses Router Mikrotik",
+						"description": "Berbagai cara untuk mengakses dan mengelola router Mikrotik"
+					}
+				]
+			},
+			{
+				"title": "Bab 3: Konfigurasi Jaringan Dasar",
+				"sections": [
+					{
+						"title": "Konfigurasi IP Address",
+						"description": "Cara mengatur alamat IP pada interface Mikrotik"
+					},
+					{
+						"title": "DHCP Server",
+						"description": "Mengatur DHCP Server untuk distribusi IP otomatis"
+					},
+					{
+						"title": "NAT dan Firewall Dasar",
+						"description": "Konfigurasi Network Address Translation dan firewall dasar"
+					}
+				]
+			},
+			{
+				"title": "Bab 4: Manajemen Bandwidth",
+				"sections": [
+					{
+						"title": "Simple Queue",
+						"description": "Manajemen bandwidth menggunakan Simple Queue"
+					},
+					{
+						"title": "Queue Tree",
+						"description": "Manajemen bandwidth lanjutan dengan Queue Tree"
+					},
+					{
+						"title": "PCQ (Per Connection Queue)",
+						"description": "Implementasi PCQ untuk distribusi bandwidth yang adil"
+					}
+				]
+			},
+			{
+				"title": "Bab 5: Wireless dan Hotspot",
+				"sections": [
+					{
+						"title": "Konfigurasi Wireless",
+						"description": "Mengatur access point wireless pada Mikrotik"
+					},
+					{
+						"title": "Setup Hotspot",
+						"description": "Membuat dan mengonfigurasi layanan hotspot"
+					},
+					{
+						"title": "User Manager",
+						"description": "Mengelola pengguna hotspot dengan User Manager"
+					}
+				]
+			}
+		]
+	},
+	"about": {
+		"metadata": {
+			"title": "Tentang Kami",
+			"description": "Mengenal lebih dekat platform Belajar Mikrotik"
+		},
+		"title": "Tentang Kami",
+		"intro": "Mengenal lebih dekat platform Belajar Mikrotik",
+		"mission": {
+			"title": "Misi Kami",
+			"description": "Misi kami adalah menyediakan materi pembelajaran Mikrotik yang berkualitas, terstruktur, dan mudah diakses untuk semua orang. Kami percaya bahwa pengetahuan jaringan komputer, khususnya Mikrotik, seharusnya dapat diakses oleh siapa saja tanpa hambatan."
+		},
+		"story": {
+			"title": "Cerita Kami",
+			"description": "Belajar Mikrotik berawal dari pengalaman pribadi pendirinya yang mulai tertarik dengan jaringan komputer saat masih duduk di bangku SMK. Saat itu, belajar Mikrotik terasa cukup menantang karena minimnya sumber belajar yang mudah dipahami, khususnya dalam Bahasa Indonesia. Dari situ, lahirlah ide untuk membuat konten pembelajaran yang simpel dan terstruktur. Awalnya hanya berupa catatan dan tutorial singkat, kini Belajar Mikrotik telah tumbuh menjadi platform pembelajaran yang digunakan oleh ribuan orang di seluruh Indonesia."
+		},
+		"team": {
+			"title": "Tim Kami",
+			"members": [
+				{
+					"name": "Zenn",
+					"role": "Founder & Fullstack Developer",
+					"bio": "Seorang developer yang memiliki pengalaman dalam membuat website dan aplikasi web."
+				},
+				{
+					"name": "Miaw",
+					"role": "Encourager",
+					"bio": "Kucing kesayangan Zenn yang selalu hadir memberi semangat saat ngoding."
+				}
+			]
+		},
+		"values": {
+			"title": "Nilai-Nilai Kami",
+			"list": [
+				{
+					"title": "Kualitas",
+					"description": "Kami berkomitmen untuk menyediakan materi pembelajaran berkualitas tinggi yang akurat dan up-to-date."
+				},
+				{
+					"title": "Aksesibilitas",
+					"description": "Kami percaya bahwa pendidikan harus dapat diakses oleh semua orang, tanpa memandang latar belakang atau kemampuan finansial."
+				},
+				{
+					"title": "Komunitas",
+					"description": "Kami menghargai kekuatan komunitas dan mendorong kolaborasi serta berbagi pengetahuan."
+				},
+				{
+					"title": "Inovasi",
+					"description": "Kami terus berinovasi dalam metode pengajaran dan penyampaian konten untuk meningkatkan pengalaman belajar."
+				}
+			]
+		}
+	},
+	"contact": {
+		"metadata": {
+			"title": "Hubungi Kami",
+			"description": "Punya pertanyaan atau masukan? Jangan ragu untuk menghubungi kami."
+		},
+		"title": "Hubungi Kami",
+		"intro": "Punya pertanyaan atau masukan? Jangan ragu untuk menghubungi kami.",
+		"form": {
+			"name": "Nama",
+			"email": "Email",
+			"subject": "Subjek",
+			"message": "Pesan",
+			"submit": "Kirim Pesan",
+			"success": "Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.",
+			"error": "Terjadi kesalahan. Silakan coba lagi nanti."
+		},
+		"info": {
+			"title": "Informasi Kontak",
+			"email": "info@belajarmikrotik.id",
+			"phone": "+62 812 3456 7890",
+			"address": "Jl. Contoh No. 123, Jakarta, Indonesia",
+			"hours": "Senin - Jumat: 09:00 - 17:00 WIB"
+		},
+		"faq": {
+
+			"title": "Pertanyaan Umum",
+			"questions": [
+				{
+					"question": "Berapa lama waktu respons untuk pertanyaan?",
+					"answer": "Kami berusaha merespons semua pertanyaan dalam waktu 24 jam pada hari kerja."
+				},
+				{
+					"question": "Apakah ada grup diskusi untuk pengguna?",
+					"answer": "Ya, kami memiliki grup Telegram dan forum diskusi yang dapat diakses melalui halaman Komunitas."
+				},
+				{
+					"question": "Bagaimana cara melaporkan kesalahan pada materi?",
+					"answer": "Anda dapat melaporkan kesalahan melalui formulir kontak ini atau melalui GitHub repository kami."
+				}
+			]
+		}
+	},
+	"materialDetail": {
+		"backToMaterials": "Kembali ke Daftar Materi",
+		"nextMaterial": "Materi Selanjutnya",
+		"prevMaterial": "Materi Sebelumnya",
+		"lastUpdated": "Terakhir diperbarui",
+		"difficulty": "Tingkat Kesulitan",
+		"duration": "Durasi",
+		"prerequisites": "Prasyarat",
+		"relatedMaterials": "Materi Terkait",
+		"downloadPdf": "Unduh PDF",
+		"shareTitle": "Bagikan",
+		"tableOfContents": "Daftar Isi",
+		"references": "Referensi",
+		"notFoundTitle": "Materi Tidak Ada",
+		"notFoundDescription": "Materi yang Anda cari tidak tersedia."
+	}
 }

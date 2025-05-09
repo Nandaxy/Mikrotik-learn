@@ -1,9 +1,21 @@
 import { getDictionary } from "../dictionaries"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Users, Code, Router, Globe } from "lucide-react"
+import { Metadata } from "next"
+
+export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
+
+  return {
+    title: dict.acknowledgements.metadata?.title || dict.acknowledgements.title,
+    description: dict.acknowledgements.metadata?.description || dict.acknowledgements.intro,
+  }
+}
 
 export default async function AcknowledgementsPage({ params }: { params: { lang: string } }) {
-  const dict = await getDictionary(params.lang as "id" | "en")
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
   const { acknowledgements } = dict
 
   const contributorIcons = [

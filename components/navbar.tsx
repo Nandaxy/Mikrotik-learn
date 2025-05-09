@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, Sun, Moon, Router, Globe } from "lucide-react"
+import { Menu, Sun, Moon, Router, Globe, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useTheme } from "next-themes"
@@ -113,6 +113,11 @@ export default function Navbar({ dict, lang }: NavbarProps) {
         </nav>
 
         <div className="flex items-center gap-2">
+
+          <Link href="https://github.com/Nandaxy/Mikrotik-learn" target="_blank" className="h-5 w-5 mr-1">
+            <Github className="h-5 w-5" />
+          </Link>
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon">

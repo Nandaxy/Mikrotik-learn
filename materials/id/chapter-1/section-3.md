@@ -2,10 +2,9 @@
 title: Kelebihan dan Kekurangan Mikrotik
 difficulty: Pemula
 difficultyEn: Beginner
-duration: 25 menit
+duration: 20 menit
 prerequisites:
-  - Pengetahuan dasar tentang Mikrotik
-  - Pemahaman dasar jaringan komputer
+  - Memahami perangkat Mikrotik dan RouterOS
 relatedMaterials:
   - title: Apa itu Mikrotik?
     path: /id/materials/1/1
@@ -18,86 +17,69 @@ tableOfContents:
     id: kelebihan
   - title: Kekurangan Mikrotik
     id: kekurangan
-  - title: Perbandingan dengan Solusi Lain
-    id: perbandingan
+  - title: Studi Kasus Penggunaan
+    id: studi-kasus
   - title: Kesimpulan
     id: kesimpulan
+references:
+  - title: ChatGPT
 ---
 
 ## Pendahuluan {#pendahuluan}
 
-Setelah mengenal Mikrotik dan perangkatnya, penting untuk memahami kelebihan dan kekurangan Mikrotik dibandingkan dengan solusi networking lainnya. Hal ini akan membantu Anda menentukan apakah Mikrotik adalah pilihan yang tepat untuk kebutuhan jaringan Anda.
+Setelah mengenal apa itu Mikrotik dan perangkat-perangkatnya, penting untuk mengetahui **kelebihan dan kekurangan Mikrotik** sebagai bahan pertimbangan sebelum digunakan dalam jaringan. Materi ini membahas sisi positif dan keterbatasan Mikrotik, disertai studi kasus penerapannya di dunia nyata.
 
 ## Kelebihan Mikrotik {#kelebihan}
 
-### 1. Harga yang Kompetitif
+1. **Harga Terjangkau**  
+   Dibandingkan perangkat sekelas seperti Cisco, Mikrotik menawarkan fitur lengkap dengan harga yang sangat kompetitif, ideal untuk sekolah, warnet, UMKM, dan ISP kecil.
 
-Salah satu kelebihan utama Mikrotik adalah harganya yang relatif terjangkau dibandingkan dengan solusi enterprise lainnya seperti Cisco atau Juniper. Dengan investasi yang lebih kecil, Anda bisa mendapatkan fitur yang cukup lengkap.
+2. **Fitur Lengkap**  
+   RouterOS menyediakan fitur yang sangat lengkap: firewall, NAT, VPN, hotspot, QoS, routing dinamis, wireless, dan manajemen bandwidth.
 
-![Perbandingan Harga](/placeholder.svg?height=250&width=450)
+3. **Antarmuka Konfigurasi Fleksibel**  
+   Dapat dikonfigurasi melalui Winbox (GUI), WebFig (web), CLI, SSH, dan API.
 
-### 2. Fitur yang Lengkap
+4. **Komunitas Besar**  
+   Banyak tutorial, forum, dan video edukasi tersedia secara gratis.
 
-Meskipun harganya terjangkau, Mikrotik menawarkan fitur yang sangat lengkap:
+5. **Stabil dan Ringan**  
+   RouterOS berjalan lancar bahkan pada hardware berspesifikasi rendah.
 
-- Firewall dan NAT yang powerful
-- Manajemen bandwidth yang detail
-- Dukungan routing protokol (OSPF, BGP, RIP)
-- VPN server dan client
-- Hotspot dengan sistem voucher
-- Wireless controller
-
-### 3. Antarmuka yang User-Friendly
-
-Winbox, aplikasi utama untuk mengkonfigurasi Mikrotik, memiliki antarmuka grafis yang relatif mudah dipahami, bahkan untuk pemula.
-
-<audio controls>
-  <source src="https://example.com/audio/mikrotik-intro.mp3" type="audio/mpeg">
-  Browser Anda tidak mendukung tag audio.
-</audio>
-
-### 4. Komunitas yang Besar
-
-Mikrotik memiliki komunitas pengguna yang besar dan aktif. Ini berarti Anda dapat dengan mudah menemukan tutorial, forum diskusi, dan solusi untuk masalah yang Anda hadapi.
-
-### 5. Konsumsi Daya yang Rendah
-
-Perangkat Mikrotik umumnya memiliki konsumsi daya yang rendah, sehingga cocok untuk implementasi di lokasi dengan keterbatasan daya.
+6. **Lisensi Berjenjang**  
+   Tersedia lisensi dari level 3–6 yang dapat disesuaikan dengan kebutuhan pengguna.
 
 ## Kekurangan Mikrotik {#kekurangan}
 
-### 1. Dukungan Resmi yang Terbatas
+1. **Kurva Belajar Cukup Tinggi**  
+   Bagi pemula, tampilan dan istilah teknis Mikrotik bisa membingungkan.
 
-Dibandingkan dengan vendor enterprise seperti Cisco, dukungan resmi dari Mikrotik relatif terbatas. Anda mungkin perlu mengandalkan komunitas untuk mendapatkan bantuan.
+2. **Kurang Cocok untuk Enterprise Besar**  
+   Untuk jaringan berskala besar dengan ribuan klien, perangkat Mikrotik kelas bawah bisa kewalahan dibanding brand kelas enterprise seperti Cisco atau Juniper.
 
-### 2. Dokumentasi yang Kurang Terstruktur
+3. **Dokumentasi Resmi Kurang Mendalam**  
+   Dokumentasi resmi tidak selalu menjelaskan kasus-kasus kompleks, sehingga sering mengandalkan komunitas.
 
-Meskipun Mikrotik memiliki dokumentasi yang cukup lengkap, terkadang dokumentasi tersebut kurang terstruktur dan sulit untuk diikuti, terutama bagi pemula.
+4. **Tidak Semua Fitur Gratis**  
+   Beberapa fitur dan lisensi level tinggi memerlukan pembelian tambahan.
 
-### 3. Keamanan
+## Studi Kasus Penggunaan {#studi-kasus}
 
-Meskipun Mikrotik memiliki fitur keamanan yang baik, beberapa fitur keamanan enterprise yang lebih canggih mungkin tidak tersedia atau memerlukan konfigurasi yang lebih kompleks.
+### 1. Sekolah atau Kampus
+Mikrotik digunakan sebagai hotspot gateway, pengatur bandwidth, dan kontrol akses ke internet siswa.
 
-### 4. Skalabilitas
+### 2. Warnet atau RT/RW Net
+Digunakan sebagai manajemen bandwidth dan billing pengguna.
 
-Untuk jaringan skala sangat besar (carrier grade), Mikrotik mungkin bukan pilihan terbaik dibandingkan dengan solusi dari vendor seperti Cisco, Juniper, atau Huawei.
+### 3. ISP Kecil
+Router Mikrotik seri CCR atau RB1100 digunakan sebagai core router atau BGP edge.
 
-## Perbandingan dengan Solusi Lain {#perbandingan}
+![Penerapan Mikrotik](https://i.ytimg.com/vi/bMME0EJKyuY/maxresdefault.jpg)
+*Sumber: Citraweb Mikrotik Indonesia*
 
-Berikut perbandingan singkat antara Mikrotik dengan beberapa solusi networking lainnya:
-
-| Fitur | Mikrotik | Cisco | Ubiquiti | pfSense |
-|-------|----------|-------|----------|---------|
-| Harga | Terjangkau | Mahal | Terjangkau | Gratis (software) |
-| Fitur | Lengkap | Sangat Lengkap | Cukup | Lengkap |
-| Kemudahan Penggunaan | Sedang | Kompleks | Mudah | Sedang |
-| Skalabilitas | Menengah | Tinggi | Menengah | Menengah |
-| Dukungan | Komunitas | Resmi & Lengkap | Terbatas | Komunitas |
+Video penjelasan lanjutan:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Qy44W0YYFqk" frameborder="0" allowfullscreen></iframe>
 
 ## Kesimpulan {#kesimpulan}
 
-Mikrotik menawarkan keseimbangan yang baik antara harga, fitur, dan kemudahan penggunaan. Ini membuatnya menjadi pilihan yang populer untuk jaringan skala kecil hingga menengah, ISP lokal, dan implementasi di daerah dengan keterbatasan anggaran.
-
-Namun, untuk jaringan enterprise skala besar atau yang memerlukan fitur keamanan tingkat lanjut, solusi dari vendor lain mungkin lebih sesuai. Pilihan terbaik akan tergantung pada kebutuhan spesifik, anggaran, dan keahlian teknis yang tersedia.
-
-Pada materi selanjutnya, kita akan mulai mempelajari cara menginstal RouterOS pada perangkat Mikrotik.
+Mikrotik adalah solusi jaringan yang handal dan ekonomis, terutama untuk segmen menengah ke bawah. Meski memiliki kekurangan dalam hal dokumentasi dan performa kelas enterprise, kelebihannya dalam kemudahan akses dan biaya rendah menjadikannya pilihan populer. Materi selanjutnya akan mulai membahas dasar konfigurasi Mikrotik secara praktis.

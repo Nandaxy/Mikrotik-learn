@@ -18,11 +18,19 @@
     "contact": "Contact"
   },
   "terms": {
+    "metadata": {
+      "title": "Terms of Service",
+      "description": "You can contribute by sending pull requests to our GitHub repository"
+    },
     "title": "Terms of Service",
     "lastUpdated": "Last updated",
     "updateDate": "May 8, 2025"
   },
   "privacy": {
+    "metadata": {
+      "title": "Privacy Policy",
+      "description": "You can contribute by sending pull requests to our GitHub repository"
+    },
     "title": "Privacy Policy",
     "lastUpdated": "Last updated",
     "updateDate": "May 8, 2025"
@@ -123,6 +131,10 @@
     "ctaSecondaryButton": "Contact Us"
   },
   "writing": {
+    "metadata": {
+        "title": "Writing Info",
+        "description": "You can contribute by submitting a pull request on our GitHub repository"
+    },
     "title": "Writing Information",
     "intro": "Guidelines for writing and contributing materials",
     "guidelines": [
@@ -145,6 +157,10 @@
     ]
   },
   "faq": {
+    "metadata": {
+      "title": "Frequently Asked Questions",
+      "description": "How long does it take to respond to a question? Is there a discussion group for users? How do I report an error in the material?"
+    },
     "title": "Frequently Asked Questions (FAQ)",
     "questions": [
       {
@@ -170,6 +186,10 @@
     ]
   },
   "acknowledgements": {
+    "metadata": {
+      "title": "Acknowledgements",
+      "description": "This website would not be possible without the help and support of:"
+    },
     "title": "Acknowledgements",
     "intro": "This website would not be possible without the help and support of:",
     "contributors": [
@@ -192,6 +212,10 @@
     ]
   },
   "materials": {
+    "metadata": {
+        "title": "Basic Mikrotik Materials",
+        "description": "Learn Mikrotik from the basics with structured materials"
+    },
     "title": "Basic Mikrotik Materials",
     "intro": "Learn Mikrotik from the basics with structured materials",
     "chapters": [
@@ -283,6 +307,10 @@
     ]
   },
   "about": {
+    "metadata": {
+      "title": "About Us",
+      "description": "Get to know the Learn Mikrotik platform better"
+    },
     "title": "About Us",
     "intro": "Get to know the Learn Mikrotik platform better",
     "mission": {
@@ -341,6 +369,10 @@
     }
   },
   "contact": {
+    "metadata": {
+			"title": "Contact Us",
+			"description": "Have questions or feedback? Don't hesitate to contact us."
+		},
     "title": "Contact Us",
     "intro": "Have questions or feedback? Don't hesitate to contact us.",
     "form": {
@@ -389,6 +421,8 @@
     "downloadPdf": "Download PDF",
     "shareTitle": "Share",
     "tableOfContents": "Table of Contents",
-    "references": "References"
+    "references": "References",
+    "notFoundTitle": "Material Not Found",
+    "notFoundDescription": "The material you are looking for is not available."
   }
 }

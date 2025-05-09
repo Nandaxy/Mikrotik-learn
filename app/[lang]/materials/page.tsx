@@ -3,9 +3,21 @@ import { getDictionary } from "../dictionaries"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChevronRight } from "lucide-react"
+import { Metadata } from "next"
+
+export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
+  
+  return {
+    title: dict.materials.metadata?.title || dict.materials.title,
+    description: dict.materials.metadata?.description || dict.materials.intro,
+  }
+}
 
 export default async function MaterialsPage({ params }: { params: { lang: string } }) {
-  const dict = await getDictionary(params.lang as "id" | "en")
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
   const { materials } = dict
 
   return (
@@ -41,7 +53,7 @@ export default async function MaterialsPage({ params }: { params: { lang: string
                       <AccordionContent className="px-6 pb-4 pt-0">
                         <CardDescription className="text-base">{section.description}</CardDescription>
                         <Link
-                          href={`/${params.lang}/materials/${chapterIndex + 1}/${sectionIndex + 1}`}
+                          href={`/${lang}/materials/${chapterIndex + 1}/${sectionIndex + 1}`}
                           className="mt-4 flex items-center text-sm font-medium text-primary hover:underline"
                         >
                           Baca Materi <ChevronRight className="ml-1 h-4 w-4" />

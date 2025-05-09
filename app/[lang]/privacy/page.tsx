@@ -2,11 +2,21 @@ import { getDictionary } from "../dictionaries"
 import { MarkdownContent } from "@/components/markdown-content"
 import { getPrivacyContent } from "@/lib/static-content"
 
+export const generateMetadata = async ({ params }: { params: { lang: string } }) => {
+  const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
+
+  return {
+    title: dict.privacy.metadata?.title || dict.privacy.title,
+    description: dict.privacy.metadata?.description
+  }
+}
+
 export default async function PrivacyPage({ params }: { params: { lang: string } }) {
-  const dict = await getDictionary(params.lang as "id" | "en")
+const { lang } = await params
+  const dict = await getDictionary(lang as "id" | "en")
   const { privacy } = dict
 
-  // Get privacy content based on language
   const content = await getPrivacyContent(params.lang)
 
   return (
@@ -19,9 +29,9 @@ export default async function PrivacyPage({ params }: { params: { lang: string }
           </p>
         </div>
 
-        <div className="prose prose-slate dark:prose-invert max-w-none">
+        <article className="prose prose-slate dark:prose-invert">
           <MarkdownContent content={content} />
-        </div>
+        </article>
       </div>
     </div>
   )

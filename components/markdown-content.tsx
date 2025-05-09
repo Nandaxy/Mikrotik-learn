@@ -1,7 +1,10 @@
 "use client"
 
-import React from "react"
-import Markdown from "markdown-to-jsx"
+import React, { JSX } from "react"
+import ReactMarkdown from "react-markdown"
+import rehypeRaw from "rehype-raw"
+import rehypeSlug from "rehype-slug"
+import remarkGfm from "remark-gfm"
 import { cn } from "@/lib/utils"
 
 interface MarkdownContentProps {
@@ -29,10 +32,9 @@ const CustomTableCell = ({ children, ...props }: React.HTMLProps<HTMLTableCellEl
   </td>
 )
 
-// Modified to use a div for the caption instead of a p tag
 const CustomImage = ({ alt, src, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
   <span className="block my-6">
-    <img src={src || "/placeholder.svg"} alt={alt || ""} className="rounded-md max-w-full h-auto mx-auto" {...props} />
+    <img src={src || "/placeholder.svg"} alt={alt || ""} className="rounded-md max-w-full h-auto mx-auto md:h-[50%] md:w-[50%]" {...props} />
     {alt && <span className="block text-center text-sm text-muted-foreground mt-2">{alt}</span>}
   </span>
 )
@@ -43,10 +45,17 @@ const CustomIframe = (props: React.IframeHTMLAttributes<HTMLIFrameElement>) => (
   </div>
 )
 
-// Improved code block rendering
-const CustomCodeBlock = ({ children, className, ...props }: React.HTMLProps<HTMLPreElement>) => {
-  // Extract language from className if present (format: "language-xxx")
-  const language = className?.match(/language-(\w+)/)?.[1] || ""
+const CustomCodeBlock = ({ node, inline, className, children, ...props }: any) => {
+  const match = /language-(\w+)/.exec(className || "")
+  const language = match ? match[1] : ""
+
+  if (inline) {
+    return (
+      <code className="rounded bg-muted px-1 py-0.5 font-mono text-sm" {...props}>
+        {children}
+      </code>
+    )
+  }
 
   return (
     <div className="my-6 relative overflow-hidden rounded-md bg-muted">
@@ -55,39 +64,16 @@ const CustomCodeBlock = ({ children, className, ...props }: React.HTMLProps<HTML
           {language}
         </div>
       )}
-      <pre className="overflow-x-auto p-4 text-sm" {...props}>
-        <code className={cn("block", className)}>{children}</code>
+      <pre className="overflow-x-auto p-4 text-sm">
+        <code className={cn("block", className)} {...props}>
+          {children}
+        </code>
       </pre>
     </div>
   )
 }
 
-const CustomCode = ({ children, ...props }: React.HTMLProps<HTMLElement>) => (
-  <code className="rounded bg-muted px-1 py-0.5 font-mono text-sm" {...props}>
-    {children}
-  </code>
-)
-
-// Extract heading ID from content if present
-const extractHeadingId = (text: string) => {
-  const match = text.match(/^(.*?)\s+\{#(.*?)\}$/)
-  if (match) {
-    return { text: match[1], id: match[2] }
-  }
-  return {
-    text,
-    id: text
-      .toLowerCase()
-      .replace(/[^\w\s]/g, "")
-      .replace(/\s+/g, "-"),
-  }
-}
-
-const CustomHeading = ({
-  level,
-  children,
-  ...props
-}: { level: number; children: React.ReactNode } & React.HTMLProps<HTMLHeadingElement>) => {
+const CustomHeading = ({ level, children, ...props }: any) => {
   const Component = `h${level}` as keyof JSX.IntrinsicElements
   const className = cn(
     "font-bold tracking-tight mt-8 mb-4 scroll-m-20",
@@ -99,89 +85,45 @@ const CustomHeading = ({
     level === 6 && "text-base",
   )
 
-  // Generate an ID from the heading text for anchor links
-  let headingText = ""
-  let id = ""
-
-  if (typeof children === "string") {
-    const extracted = extractHeadingId(children)
-    headingText = extracted.text
-    id = extracted.id
-  } else {
-    headingText = React.Children.toArray(children).join("")
-    id = headingText
-      .toLowerCase()
-      .replace(/[^\w\s]/g, "")
-      .replace(/\s+/g, "-")
-  }
-
   return (
-    <Component className={className} id={id} {...props}>
-      {typeof children === "string" ? headingText : children}
+    <Component className={className} {...props}>
+      {children}
     </Component>
   )
 }
 
-// Custom paragraph component to handle special cases
-const CustomParagraph = ({ children, ...props }: React.HTMLProps<HTMLParagraphElement>) => {
-  // Check if the only child is an image or iframe
-  const hasOnlyMediaChild =
-    React.Children.count(children) === 1 &&
-    React.isValidElement(children) &&
-    (children.type === CustomImage || children.type === CustomIframe)
-
-  // If it's a media element, don't wrap in a paragraph
-  if (hasOnlyMediaChild) {
-    return <>{children}</>
-  }
-
-  return <p {...props}>{children}</p>
-}
-
-// Process code blocks with backticks
-const processContent = (content: string) => {
-  // Replace triple backtick code blocks with custom format
-  return content.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, language, code) => {
-    // Escape HTML entities to prevent rendering issues
-    const escapedCode = code
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;")
-
-    return `<pre class="language-${language || "text"}">${escapedCode}</pre>`
-  })
-}
-
 export function MarkdownContent({ content, className }: MarkdownContentProps) {
-  // Process content to handle code blocks better
-  const processedContent = processContent(content)
-
   return (
     <div className={cn("prose prose-slate dark:prose-invert max-w-none", className)}>
-      <Markdown
-        options={{
-          overrides: {
-            h1: { component: CustomHeading, props: { level: 1 } },
-            h2: { component: CustomHeading, props: { level: 2 } },
-            h3: { component: CustomHeading, props: { level: 3 } },
-            h4: { component: CustomHeading, props: { level: 4 } },
-            h5: { component: CustomHeading, props: { level: 5 } },
-            h6: { component: CustomHeading, props: { level: 6 } },
-            p: { component: CustomParagraph },
-            table: { component: CustomTable },
-            th: { component: CustomTableHead },
-            td: { component: CustomTableCell },
-            img: { component: CustomImage },
-            iframe: { component: CustomIframe },
-            pre: { component: CustomCodeBlock },
-            code: { component: CustomCode },
-          },
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw, rehypeSlug]}
+        components={{
+          h1: (props) => <CustomHeading level={1} {...props} />,
+          h2: (props) => <CustomHeading level={2} {...props} />,
+          h3: (props) => <CustomHeading level={3} {...props} />,
+          h4: (props) => <CustomHeading level={4} {...props} />,
+          h5: (props) => <CustomHeading level={5} {...props} />,
+          h6: (props) => <CustomHeading level={6} {...props} />,
+          p: ({ node, ...props }) => <p className="mb-4" {...props} />,
+          a: ({ node, ...props }) => <a className="text-primary hover:underline" {...props} />,
+          table: (props) => <CustomTable {...props} />,
+          th: (props) => <CustomTableHead {...props} />,
+          td: (props) => <CustomTableCell {...props} />,
+          img: (props) => <CustomImage {...props} />,
+          iframe: (props) => <CustomIframe {...props} />,
+          code: (props) => <CustomCodeBlock {...props} />,
+          ul: ({ node, ...props }) => <ul className="list-disc pl-6 mb-4" {...props} />,
+          ol: ({ node, ...props }) => <ol className="list-decimal pl-6 mb-4" {...props} />,
+          li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+          blockquote: ({ node, ...props }) => (
+            <blockquote className="border-l-4 border-border pl-4 italic" {...props} />
+          ),
+          hr: ({ node, ...props }) => <hr className="my-6 border-border" {...props} />,
         }}
       >
-        {processedContent}
-      </Markdown>
+        {content}
+      </ReactMarkdown>
     </div>
   )
 }
